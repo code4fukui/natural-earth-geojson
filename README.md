@@ -1,20 +1,33 @@
 # Natural Earth data in GeoJSON
+# natural-earth-geojson
 
 [Natural Earth](http://www.naturalearthdata.com) "is a public domain map dataset available at 1:10m, 1:50m and 1:110 million scales."
 The vector data comes as [ESRI shapefiles](http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf).
 This repository provides the same data but converted to [GeoJSON](http://geojson.org), along with a compressed version.
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
 <img src="logo.png">
+The natural-earth-geojson repository provides the Natural Earth vector data converted to GeoJSON format, including compressed versions. The data covers a wide range of cultural and physical geographic features.
 
 The conversion is performed using [ogr2ogr](http://www.gdal.org/ogr2ogr.html), part of the [Geospatial Data Abstraction Library](http://www.gdal.org) (GDAL).
 GDAL provides [links to binaries](https://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
 Debian provides the package [gdal-bin](https://packages.debian.org/gdal-bin).
+## Features
 
 ## Data Themes
+The repository includes the following data themes:
 
 An overview of the files, taken from the [features page](http://www.naturalearthdata.com/features).
 
 ### Cultural
+- Countries
+- Disputed areas and breakaway regions
+- Administrative boundaries
+- Populated places
+- Urban areas
+- Parks and protected areas
+- Pacific nation groupings
+- Water boundary indicators
 
 | Section | Description | 1:10m | 1:50m | 1:110m |
 | --- | --- | --- | --- | --- |
@@ -28,6 +41,17 @@ An overview of the files, taken from the [features page](http://www.naturalearth
 | Water boundary indicators | Partial selection of key 200-mile nautical limits, plus some disputed, treaty, and median lines. | Yes | | |
 
 ### Physical
+- Coastline
+- Land
+- Ocean
+- Minor islands
+- Reefs
+- Geographic features
+- Rivers and lakes
+- Glaciated areas
+- Bathymetry
+- Geographic lines
+- Graticules
 
 | Section | Description | 1:10m | 1:50m | 1:110m |
 | --- | --- | --- | --- | --- |
@@ -48,12 +72,19 @@ An overview of the files, taken from the [features page](http://www.naturalearth
 ## Version
 
 Data used is [version 4.0.0](http://www.naturalearthdata.com/updates/mail.cgi?flavor=archive;list=updates;id=20171103122417) (released 2017-11-03), the latest as of 2017-11-03.
+The data provided is version 4.0.0, released on 2017-11-03.
 
 ## Disclaimer
 
 The Natural Earth [disclaimer regarding disputed areas](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/):
+The Natural Earth data includes a disclaimer regarding disputed areas, stating that the boundaries shown reflect the de facto status on the ground.
 
 > Natural Earth Vector draws boundaries of countries according to de facto status.
 > We show who actually controls the situation on the ground.
 > Please feel free to mashup our disputed area themes to match your particular political outlook.
+## Conversion
 
+The GeoJSON conversion is performed using the `ogr2ogr` tool from the Geospatial Data Abstraction Library (GDAL).
+
+## License
+This project is licensed under the [MIT License](LICENSE).
